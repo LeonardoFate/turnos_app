@@ -1,0 +1,19 @@
+<div class="container">
+    <h2 class="title">Cola de Turnos</h2>
+    <table class="turnos-table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Nombre</th>
+          <th>Área</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let turno of turnos; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ turno.nombres }}</td>
+          <td>{{ turno.area }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

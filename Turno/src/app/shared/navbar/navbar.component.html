@@ -1,0 +1,66 @@
+<!-- Sidebar que solo se muestra cuando el usuario está autenticado -->
+<nav class="sidebar">
+    <header>
+      <div class="logo">
+        <a routerLink="/" class="logo-text">App Turno</a>
+      </div>
+    </header>
+
+    <ul class="nav-links">
+      <!-- Enlaces visibles solo si el usuario NO está autenticado -->
+      <li *ngIf="!isAuthenticated()">
+        <a
+          routerLink="/crear"
+          [class.active]="activeLink === 'crear'"
+          (click)="setActiveLink('crear')"
+          class="nav-link"
+        >
+          Crear Turno
+        </a>
+      </li>
+
+      <li *ngIf="!isAuthenticated()">
+        <a
+          routerLink="/cola"
+          [class.active]="activeLink === 'cola'"
+          (click)="setActiveLink('cola')"
+          class="nav-link"
+        >
+          Cola de Turnos
+        </a>
+      </li>
+
+      <li *ngIf="!isAuthenticated()">
+        <a
+          routerLink="/ventanilla"
+          [class.active]="activeLink === 'ventanilla'"
+          (click)="setActiveLink('ventanilla')"
+          class="nav-link"
+        >
+          Ventanilla
+        </a>
+      </li>
+
+      <!-- Enlace "Historial" visible solo si el usuario está autenticado -->
+      <li *ngIf="isAuthenticated()">
+        <a
+          routerLink="/historial"
+          [class.active]="activeLink === 'historial'"
+          (click)="setActiveLink('historial')"
+          class="nav-link"
+        >
+          Historial
+        </a>
+      </li>
+    </ul>
+
+    <!-- Botón "Iniciar Sesión" visible solo si el usuario NO está autenticado -->
+    <button *ngIf="!isAuthenticated()" (click)="navigateToLogin()" class="login-button">
+      Iniciar sesión
+    </button>
+
+    <!-- Botón "Cerrar Sesión" visible solo si el usuario está autenticado -->
+    <button *ngIf="isAuthenticated()" (click)="logout()" class="logout-button">
+      Cerrar sesión
+    </button>
+  </nav>

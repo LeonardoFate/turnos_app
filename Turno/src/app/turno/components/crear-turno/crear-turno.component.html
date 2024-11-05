@@ -1,0 +1,42 @@
+<!-- Contenedor de la alerta -->
+<div *ngIf="mensaje" [ngClass]="{'alerta-exito': tipoMensaje === 'success', 'alerta-error': tipoMensaje === 'error'}" class="alerta">
+    {{ mensaje }}
+  </div>
+
+  <!-- Formulario para crear el turno -->
+  <form [formGroup]="turnoForm" (ngSubmit)="onSubmit()" class="turno-form">
+    <h2>Generar Turnos</h2>
+
+    <label for="nombres">Nombres *</label>
+    <input id="nombres" type="text" formControlName="nombres" required />
+    <div *ngIf="turnoForm.get('nombres')?.hasError('required') && (turnoForm.get('nombres')?.touched || turnoForm.get('nombres')?.dirty)" class="error">
+      Este campo es obligatorio.
+    </div>
+
+    <label for="area">Área *</label>
+    <select id="area" formControlName="area" required>
+      <option *ngFor="let area of areas" [value]="area">{{ area }}</option>
+    </select>
+    <div *ngIf="turnoForm.get('area')?.hasError('required') && (turnoForm.get('area')?.touched || turnoForm.get('area')?.dirty)" class="error">
+      Este campo es obligatorio.
+    </div>
+
+    <label for="tramite">Trámite *</label>
+    <select id="tramite" formControlName="tramite" required>
+      <option *ngFor="let tramite of tramites" [value]="tramite">{{ tramite }}</option>
+    </select>
+    <div *ngIf="turnoForm.get('tramite')?.hasError('required') && (turnoForm.get('tramite')?.touched || turnoForm.get('tramite')?.dirty)" class="error">
+      Este campo es obligatorio.
+    </div>
+
+    <label for="observacion">Observación *</label>
+    <textarea id="observacion" formControlName="observacion" required></textarea>
+    <div *ngIf="turnoForm.get('observacion')?.hasError('required') && (turnoForm.get('observacion')?.touched || turnoForm.get('observacion')?.dirty)" class="error">
+      Este campo es obligatorio.
+    </div>
+
+    <div class="button-group">
+      <button type="submit">Generar</button>
+      <button type="button" (click)="turnoForm.reset()">Limpiar</button>
+    </div>
+  </form>

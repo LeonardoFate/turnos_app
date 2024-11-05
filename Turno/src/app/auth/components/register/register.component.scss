@@ -1,0 +1,106 @@
+/* Contenedor principal del formulario de registro */
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.register-container label {
+    display: block;
+    text-align: left;
+    margin: 0.5rem 0 0.2rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Estilo para los inputs y el select */
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"],
+.register-container select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.register-container input:focus,
+.register-container select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Personalización del select con flecha */
+.register-container select {
+    appearance: none; /* Elimina el estilo predeterminado del navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='%23777' d='M8 10l4 4 4-4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 32px; /* Añade espacio para la flecha */
+}
+
+/* Estilo para el botón de registro */
+.register-container button[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #0056b3;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-container button[type="submit"]:disabled {
+    background-color: #5cabff;
+    cursor: not-allowed;
+}
+
+.register-container button[type="submit"]:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+/* Añade espaciado al final */
+.register-container {
+    padding-bottom: 2rem;
+}
+.register-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.login-link {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+.alert-error {
+    color: red;
+    margin-top: 10px;
+  }

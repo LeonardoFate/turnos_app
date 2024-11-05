@@ -1,0 +1,29 @@
+<div *ngIf="mensaje" [ngClass]="{'alerta-exito': tipoMensaje === 'success', 'alerta-error': tipoMensaje === 'error'}" class="alerta">
+    {{ mensaje }}
+  </div>
+
+  <div *ngIf="turnos.length > 0; else noTurnos" class="ventanilla-contenedor">
+    <h2>Ventanilla</h2>
+    <p><strong>Nombre:</strong> {{ turnos[turnoActualIndex].nombres }}</p>
+    <p><strong>Área:</strong> {{ turnos[turnoActualIndex].area }}</p>
+    <p><strong>Trámite:</strong> {{ turnos[turnoActualIndex].tramite }}</p>
+    <p><strong>Observación:</strong> {{ turnos[turnoActualIndex].observacion }}</p>
+
+    <label for="comentario"><strong>Comentario:</strong></label>
+    <textarea id="comentario" [(ngModel)]="comentario" rows="3"></textarea>
+
+    <label for="archivo"><strong>Archivo:</strong></label>
+    <input id="archivo" type="file" (change)="onFileChange($event)" />
+
+    <div class="button-group">
+      <button (click)="onSubmit()">Siguiente</button>
+      <button (click)="saltarTurno()">Saltar</button>
+    </div>
+  </div>
+
+  <ng-template #noTurnos>
+    <div class="no-turnos">
+      <h2>No hay turnos disponibles</h2>
+      <p>Por favor, espera mientras se generan nuevos turnos.</p>
+    </div>
+  </ng-template>

@@ -1,0 +1,147 @@
+.turno-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(224, 217, 217, 0.1);
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .turno-form h2 {
+    font-size: 24px;
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .turno-form label {
+    display: block;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #495057;
+  }
+
+  .turno-form input[type="text"],
+  .turno-form select,
+  .turno-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+
+  .turno-form input[type="text"]:focus,
+  .turno-form select:focus,
+  .turno-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    outline: none;
+  }
+
+  .turno-form .error {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+  }
+
+  .turno-form .error::before {
+    content: '⚠️ ';
+    margin-right: 5px;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .button-group button {
+    width: 48%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+  }
+
+  .button-group button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .button-group button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+  .button-group button[type="button"] {
+    background-color: #6c757d;
+    color: white;
+  }
+
+  .button-group button[type="button"]:hover {
+    background-color: #5a6268;
+  }
+  .alerta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1000;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .alerta-exito {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+  }
+
+  .alerta-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+  }
+  textarea#observacion {
+    width: 100%; /* Abarca todo el ancho disponible */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Desactiva la redimensión */
+    font-size: 16px;
+    line-height: 1.5;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+textarea#observacion:focus {
+    border-color: #0056b3; /* Cambia el color del borde al enfocar */
+    background-color: #f0f8ff; /* Le da un ligero fondo al enfocarse */
+    outline: none; /* Elimina el borde de enfoque predeterminado */
+}
+
+label[for="observacion"] {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}

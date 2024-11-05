@@ -1,0 +1,16 @@
+<!-- src/app/historia-turnos/historia-turnos.component.html -->
+<div class="historia-container">
+    <h2>Historial de Turnos</h2>
+    <div *ngIf="turnosDespachados.length; else noData">
+      <ul>
+        <li *ngFor="let turno of turnosDespachados">
+          <p><strong>Turno:</strong> {{ turno.id }}</p>
+          <p><strong>Comentario:</strong> {{ turno.comentario || 'Sin comentario' }}</p>
+          <p><strong>Archivo:</strong> {{ turno.archivoPath || 'Sin archivo' }}</p>
+        </li>
+      </ul>
+    </div>
+    <ng-template #noData>
+      <p>No hay turnos despachados.</p>
+    </ng-template>
+  </div>

@@ -1,0 +1,24 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-container">
+    <label for="nombre">Nombre</label>
+    <input id="nombre" formControlName="nombre" type="text" />
+
+    <label for="correo">Correo</label>
+    <input id="correo" formControlName="correo" type="email" />
+
+    <label for="contraseña">Contraseña</label>
+    <input id="contraseña" formControlName="contraseña" type="password" />
+
+    <!-- Contenedor para mostrar el mensaje de error -->
+    <div *ngIf="errorMessage" class="alert alert-error">
+        {{ errorMessage }}
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">Registrar</button>
+
+    <!-- Enlace a la página de inicio de sesión -->
+    <div class="login-link">
+        <p>¿Ya tienes cuenta?
+            <a routerLink="/login">Inicia sesión</a>
+        </p>
+    </div>
+</form>
