@@ -5,7 +5,8 @@ Este proyecto es una aplicación de turnos que permite gestionar y atender turno
 
 ## Diagrama de Arquitectura
 
-![Diagrama de Arquitectura](ruta-a-tu-diagrama.png)
+![Diagrama](https://github.com/user-attachments/assets/3ffce0d9-cb2c-4e04-a6cb-9a891da4e7fb)
+
 
 **Descripción del Diagrama**:
 1. **Usuario** accede a la aplicación desde un navegador web y realiza solicitudes de turnos.
@@ -60,9 +61,6 @@ Este proyecto es una aplicación de turnos que permite gestionar y atender turno
 - **Cola de Turnos**: Muestra los turnos en el orden en que fueron solicitados.
 - **Atención de Turnos**: Permite avanzar al siguiente turno en la cola y actualizar el estado de cada turno.
 
-## Contribuciones
-
-Si deseas contribuir al proyecto, realiza un fork del repositorio, crea una rama con tus cambios y envía un pull request para su revisión.
 
 ## Contacto
 
